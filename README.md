@@ -36,3 +36,25 @@ Untracked files:
         views/
 
 nothing added to commit but untracked files present (use "git add" to track)
+
+6.3. Create .gitignore file and
+        git add files
+
+6.4. git commit -m "Initial commit"
+
+λ git commit -m "Initial commit"
+[master (root-commit) 8910ae5] Initial commit
+11 files changed, 751 insertions(+)
+create mode 100644 .gitignore
+create mode 100644 README.md
+create mode 100644 package-lock.json
+create mode 100644 package.json
+create mode 100644 public/help.html
+create mode 100644 server.js
+create mode 100644 views/about.hbs
+create mode 100644 views/home.hbs
+create mode 100644 views/maintenance.hbs
+create mode 100644 views/partials/footer.hbs
+create mode 100644 views/partials/header.hbs
+
+7.  GitHub amd Heroku application deployment.
