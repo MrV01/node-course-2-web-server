@@ -59,7 +59,7 @@ Agent pid 2032
 
 6.  Tell to ssh-agent where the SSH private key located.  ssh-add ~/.ssh/id_rsa
 
-Example:  (passphrase is: 123456AAA)
+Example:  (passphrase was: 123456AAA)
 00:47 $ ssh-add ~/.ssh/id_rsa
 Enter passphrase for /c/Users/Vlad/.ssh/id_rsa:
 Identity added: /c/Users/Vlad/.ssh/id_rsa (/c/Users/Vlad/.ssh/id_rsa)
@@ -99,3 +99,20 @@ git push -u origin master
    git remote add origin git@github.com:MrV01/node-course-2-web-server.git
    git push -u origin master
     )
+
+Example:
+
+01:30 $ git remote add origin git@github.com:MrV01/node-course-2-web-server.git
+✔ ~/Documents/PROG/HTML5/sites/completeNodeJsDeveloperCourse2/node-web-server [master L|✔]
+01:30 $ git push -u origin master
+Counting objects: 21, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (19/19), done.
+Writing objects: 100% (21/21), 10.20 KiB | 0 bytes/s, done.
+Total 21 (delta 5), reused 0 (delta 0)
+remote: Resolving deltas: 100% (5/5), done.
+To github.com:MrV01/node-course-2-web-server.git
+* [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+✔ ~/Documents/PROG/HTML5/sites/completeNodeJsDeveloperCourse2/node-web-server [master|✔]
+01:30 $
