@@ -2,7 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
-const port = process.env.PORT || 3000; // Heroku  deployment  port or default
+const port = process.env.PORT || 3000; // Heroku  deployment  port or default port = 3000
 
 var app = express();
 

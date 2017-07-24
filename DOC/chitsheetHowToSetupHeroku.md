@@ -122,4 +122,99 @@ Example output:
 
 Node server.js ExpressJS Server is up on port 3000
 
-6. Save  git add/commit/push
+6. Save  git status/add/commit/push
+
+  -  git status
+  -  git add -A
+  -   git commit -m "Setup start script and heroku port"
+  -   git push  # Can be just push, because "remote origin master" has been set earlier in the course.
+    Example of the "push" output:
+    remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+      To github.com:MrV01/node-course-2-web-server.git
+      eb91afa..f0762d6  master -> master
+
+  7.   Create heroku application and add new remote "heroku" to the current git repository.
+    bash command:      heroku create
+    Example output:
+
+    ✔ ~/Documents/PROG/HTML5/sites/completeNodeJsDeveloperCourse2/node-web-server [master|✚ 1]
+23:35 $ heroku create
+heroku-cli: Updating to 6.12.17-aa05cb0... 11.1 MB/11.1 MB
+Creating app... done, tranquil-basin-54519
+https://tranquil-basin-54519.herokuapp.com/ | https://git.heroku.com/tranquil-basin-54519.git
+✔ ~/Documents/PROG/HTML5/sites/completeNodeJsDeveloperCourse2/node-web-server [master|✚ 1]
+23:37 $  
+
+8. Push  git repository to brand  remote "heroku"
+
+  Command:  git push heroku
+
+  Example output:
+23:43 $ git push heroku
+Counting objects: 32, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (30/30), done.
+Writing objects: 100% (32/32), 14.30 KiB | 0 bytes/s, done.
+Total 32 (delta 11), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Node.js app detected
+remote:
+remote: -----> Creating runtime environment
+remote:
+remote:        NPM_CONFIG_LOGLEVEL=error
+remote:        NPM_CONFIG_PRODUCTION=true
+remote:        NODE_VERBOSE=false
+remote:        NODE_ENV=production
+remote:        NODE_MODULES_CACHE=true
+remote:
+remote: -----> Installing binaries
+remote:        engines.node (package.json):  unspecified
+remote:        engines.npm (package.json):   unspecified (use default)
+remote:
+remote:        Resolving node version 6.x via semver.io...
+remote:        Downloading and installing node 6.11.1...
+remote:        Detected package-lock.json: defaulting npm to version 5.x.x
+remote:        Resolving npm version 5.x.x via semver.io...
+remote:        Downloading and installing npm 5.3.0 (replacing version 3.10.10)...
+remote:
+remote: -----> Restoring cache
+remote:        Skipping cache restore (new-signature)
+remote:
+remote: -----> Building dependencies
+remote:        Installing node modules (package.json)
+remote:        added 69 packages in 3.406s
+remote:
+remote: -----> Caching build
+remote:        Clearing previous node cache
+remote:        Saving 2 cacheDirectories (default):
+remote:        - node_modules
+remote:        - bower_components (nothing to cache)
+remote:
+remote: -----> Build succeeded!
+remote: -----> Discovering process types
+remote:        Procfile declares types     -> (none)
+remote:        Default types for buildpack -> web
+remote:
+remote: -----> Compressing...
+remote:        Done: 16.8M
+remote: -----> Launching...
+remote:        Released v3
+remote:        https://tranquil-basin-54519.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/tranquil-basin-54519.git
+* [new branch]      master -> master
+✔ ~/Documents/PROG/HTML5/sites/completeNodeJsDeveloperCourse2/node-web-server [master|✚ 1]
+23:44 $
+
+9. We've got  Heroku - generated  URL https://git.heroku.com/tranquil-basin-54519.git
+ for our application running/deployed on Heroku. Now open the application in the browser.
+
+Command:      heroku open
+
+Example of the output:
+23:44 $ heroku open
+✔ ~/Documents/PROG/HTML5/sites/completeNodeJsDeveloperCourse2/node-web-server [master|✚ 1]
+23:47 $
