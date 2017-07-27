@@ -145,7 +145,7 @@ https://tranquil-basin-54519.herokuapp.com/ | https://git.heroku.com/tranquil-ba
 ✔ ~/Documents/PROG/HTML5/sites/completeNodeJsDeveloperCourse2/node-web-server [master|✚ 1]
 23:37 $  
 
-8. Push  git repository to brand  remote "heroku"
+8. Push  git repository to brand new  git  remote  named "heroku"
 
   Command:  git push heroku
 

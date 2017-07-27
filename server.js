@@ -1,3 +1,6 @@
+//
+//  Modified for deployment on Heroku
+
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
@@ -39,15 +42,18 @@ app.use((req, res, next ) => {  // request, response, next function to continue
 });
 
 // Challege 3.  Set up middleware, which will show maintenece page only. and nothing else.
-// ( In Express object. )
-app.use(( req, res, next) => {
-  res.render('maintenance.hbs'); // renders responce page
-});
-// next() call is absent, therefore  only one maintenance page will be rendered
-// Next piece of middleware will not get control.
+// ( In Express object. )  The maintenance page  has been
+// Disabled, because  of Challenge 10  implementation
+// app.use(( req, res, next) => {
+//   res.render('maintenance.hbs'); // renders Maintenance page
+// });
+// After res.render('maintenance.hbs')  there is  next() call absent,
+/// Therefore  only one maintenance page will be rendered
+//    Other  pieces of middleware will not get control, It will be always maintenance page displayed.
+
+
 // Register "Middleware" embedded into Express.js to run static web page:
 app.use(express.static(__dirname + '/public'));
-
 
 // Regietering helper(s)  on Handlebars engine
 // Now we can use the name in .hbs files as: {{getCurrentYear}}
@@ -59,14 +65,14 @@ hbs.registerHelper('screamIt', (screamText) => {
 
 //
 // Basic server, which is listening http/tcp port 3000 and has response handlers running:
-  // 1.  /
+  // 1.  /hello
   // 2.  /bad
   // 3.  /json
   // 4.  /about
-  //
+  // 5.  /              // is  Home page with dynamic content . (Handlebars format.)
+  // 6.  /portfolio   // is Challenge X.  regarding deployment in Heroku
 
-
-  //1. Route / (root)
+  //1. Route /hello (from root)
 app.get('/hello', (req, res) => {
   res.send('<h1>Hello Express!</h1>');
 });
@@ -86,6 +92,20 @@ app.get('/bad', (req, res) => {
   });
 });
 
+// 3.  Route JSON response
+    app.get('/json', (req, res) => {
+
+      res.send({
+          name: 'VVV',
+          likes: [
+            'Cooking',
+            'Biking',
+            'Country'
+          ]
+      });
+    });
+
+
 // 4.  Route /about   Uses HandlebarJS template ( by default from views folder ).
   app.get('/about',  (req, res) => {
       res.render('about.hbs', {
@@ -104,18 +124,14 @@ app.get('/bad', (req, res) => {
       });
   });
 
-// 3.  Route JSON response
-    app.get('/json', (req, res) => {
-
-      res.send({
-          name: 'VVV',
-          likes: [
-            'Cooking',
-            'Biking',
-            'Country'
-          ]
+  // 6. Challenge X. Build new HTML page /portfolio and deploy it to Heroku (also pushing to GitHub)
+  app.get('/portfolio',  (req, res) => {
+      res.render('portfolio.hbs', {
+        pageTitle: 'Portfolio Page',
+        welcomeMessage: 'Portfolio of  Mr.V',
+        currentYear: new Date().getFullYear()
       });
+  });
 
-    });
-
+// Server is ready, start listening HTTP port.
 app.listen(port, () => console.log(`Node server.js ExpressJS Server is up on port ${port}`));
