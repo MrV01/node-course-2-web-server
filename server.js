@@ -70,7 +70,7 @@ hbs.registerHelper('screamIt', (screamText) => {
   // 3.  /json
   // 4.  /about
   // 5.  /              // is  Home page with dynamic content . (Handlebars format.)
-  // 6.  /portfolio   // is Challenge X.  regarding deployment in Heroku
+  // 6.  /projects   // is Challenge X.  regarding deployment in Heroku
 
   //1. Route /hello (from root)
 app.get('/hello', (req, res) => {
@@ -125,9 +125,9 @@ app.get('/bad', (req, res) => {
   });
 
   // 6. Challenge X. Build new HTML page /portfolio and deploy it to Heroku (also pushing to GitHub)
-  app.get('/portfolio',  (req, res) => {
-      res.render('portfolio.hbs', {
-        pageTitle: 'Portfolio Page',
+  app.get('/projects',  (req, res) => {
+      res.render('projects.hbs', {
+        pageTitle: 'Projects Page',
         welcomeMessage: 'Portfolio of  Mr.V',
         currentYear: new Date().getFullYear()
       });
